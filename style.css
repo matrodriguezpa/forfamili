@@ -1,56 +1,62 @@
 /* style.css */
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-  }
-  
-  .site-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background: #005f73;
-    color: #fff;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  .logo img {
-    width: 50px;
-    margin-right: 0.5rem;
-  }
-  
-  .main-nav a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-  }
-  .main-nav a:hover {
-    text-decoration: underline;
-  }
-  
-  .social a {
-    color: #fff;
-    text-decoration: none;
-  }
-  .social a:hover {
-    opacity: 0.8;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  * {box-sizing:border-box}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #d18d44;
+  color: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  margin-right: 0.5rem;
+}
+
+.main-nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.social a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.social a:hover {
+  opacity: 0.8;
+}
+
+* {
+  box-sizing: border-box
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -66,13 +72,14 @@
 
 .mySlides img {
   width: 100%;
-  max-height: 350px;
+  max-height: 450px;
   border-radius: 15px;
   object-fit: cover;
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -94,8 +101,9 @@
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -130,7 +138,8 @@
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -141,30 +150,83 @@
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
-.main-block{
-    margin: 1rem 2rem;
+.main-block {
+  margin: 1rem 2rem;
 }
-  .section-block  {
-    padding: 2rem;
-    background: #fff;
-    margin: 1rem 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+.section-block {
+  padding: 2rem;
+  background: #fff;
+  margin: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-block h2 {
+  margin-bottom: 1rem;
+  color: #005f73;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #003f5c;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .social {
+    display: none;
   }
-  
-  .section-block h2 {
-    margin-bottom: 1rem;
-    color: #005f73;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .site-header {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
   }
-  
-  .site-footer {
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 1rem;
-    background: #003f5c;
-    color: #fff;
   }
-  
+
+  .mySlides img {
+    min-height: 400px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  a{
+    font-size: small;
+  }
+
+  .main-nav {
+    margin-top: 1rem;
+  }
+
+  .slideshow-container {
+    width: 100%;
+  }
+}
