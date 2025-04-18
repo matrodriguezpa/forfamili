@@ -2,7 +2,7 @@
 
 // 1) Define your slides in one place:
 const slides = [
-  { src: 'images/slideshow/foto1.jpg', caption: 'Caption Text' },
+  { src: 'images/slideshow/foto1.jpg', caption: 'Duvan es puto' },
   { src: 'images/slideshow/foto2.jpg', caption: 'Caption Two' },
   { src: 'images/slideshow/foto3.jpg', caption: 'Caption Three' }
 ];
