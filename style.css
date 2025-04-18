@@ -18,8 +18,8 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background: #d18d44;
+  padding: 0.5rem 2rem;
+  background: #003f5c;
   color: #fff;
 }
 
@@ -72,7 +72,7 @@ body {
 
 .mySlides img {
   width: 100%;
-  max-height: 450px;
+  max-height: 400px;
   border-radius: 15px;
   object-fit: cover;
 }
@@ -218,7 +218,7 @@ body {
     font-size: 2.5rem;
   }
 
-  a{
+  a {
     font-size: small;
   }
 
