@@ -31,6 +31,21 @@ body {
 .logo img {
   width: 50px;
   margin-right: 0.5rem;
+  background-color: #f2f2f2;
+  border: 5px solid #ffffff; /* Black border, 3px thick */
+  border-radius: 50px;     /* Optional: rounded corners */
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* removes underline */
+  color: inherit; /* keep text color consistent */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03); /* slightly zooms in */
 }
 
 .main-nav a {
@@ -211,7 +226,7 @@ body {
   }
 
   .mySlides img {
-    min-height: 400px;
+    min-height: 450px;
   }
 
   h1 {
