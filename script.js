@@ -20,7 +20,7 @@ slides.forEach((s, i) => {
   slide.className = 'mySlides fade';
   slide.innerHTML = `
     <div class="numbertext">${i + 1} / ${slides.length}</div>
-    <img src="${s.src}">
+    <img src="${s.src}" alt="Slide ${i + 1}">
     <div class="text">${s.caption}</div>
   `;
   container.insertBefore(slide, prevBtn);
