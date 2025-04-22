@@ -55,8 +55,7 @@ body {
 }
 
 .logo:hover {
-    transform: scale(1.03);
-    /* slightly zooms in */
+    transform: translateY(-0.25rem);
 }
 
 .main-nav a {
@@ -198,13 +197,12 @@ body {
 .section-block {
     padding: 2rem;
     background: #fff;
-    margin: auto;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin: auto auto 1rem;
 }
 
 .section-block h2 {
@@ -224,7 +222,7 @@ body {
     flex-direction: column;
     gap: 5px;
     font-weight: bold;
-    color: #0a9396;
+    color: white;
 }
 
 .site-footer {
@@ -261,13 +259,9 @@ body {
     text-decoration: none;
 }
 
+
 .contact-items a:hover {
     text-decoration: underline;
-}
-
-.copyright {
-    font-size: 0.9rem;
-    opacity: 0.8;
 }
 
 @media (max-width: 900px) {
