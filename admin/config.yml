@@ -1,3 +1,5 @@
+# admin/config.yml
+
 backend:
   name: github
   repo: "matrodriguezpa/forfamili"
@@ -5,16 +7,17 @@ backend:
   client_id: Ov23lidkb0Ch9PSiFpgw
   client_secret: e943d3eb4424dfd471cadfdc4bac54ff3ddde48d
 
-media_folder: "static/images/uploads"  # carpeta en el repo para subir imágenes
-public_folder: "/images/uploads"       # ruta pública para mostrar imágenes
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "posts"
     label: "Publicaciones"
     folder: "content/posts"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Título", name: "title", widget: "string"}
-      - {label: "Fecha", name: "date", widget: "datetime"}
-      - {label: "Imagen", name: "image", widget: "image"}
-      - {label: "Cuerpo", name: "body", widget: "markdown"}
+      - { label: "Título",   name: "title",  widget: "string" }
+      - { label: "Fecha",    name: "date",   widget: "datetime" }
+      - { label: "Imagen",   name: "image",  widget: "image" }
+      - { label: "Cuerpo",   name: "body",   widget: "markdown" }
