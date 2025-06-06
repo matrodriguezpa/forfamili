@@ -1,15 +1,30 @@
 // script.js
+// script.js
 document.addEventListener("DOMContentLoaded", function() {
   const postsContainer = document.getElementById('posts-container');
-  fetch('https://raw.githubusercontent.com/matrodriguezpa/forfamili/main/content/posts/ejemplo.md')
-      .then(response => response.text())
-      .then(text => {
-        // Convertir Markdown a HTML y añadir al contenedor
-        const html = marked.parse(text);
+
+  // Nombre de tu archivo de ejemplo dentro de content/posts/
+  const postPath = '/content/posts/ejemplo.md';
+
+  fetch(postPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se encontró la publicación: ' + postPath);
+        }
+        return response.text();
+      })
+      .then(mdText => {
+        // Convertir Markdown a HTML
+        const html = marked.parse(mdText);
+        // Inyectar el HTML dentro del contenedor
         postsContainer.innerHTML = html;
       })
-      .catch(err => console.error('Error al cargar la publicación:', err));
+      .catch(err => {
+        postsContainer.innerHTML = `<p>Hubo un error al cargar las publicaciones: ${err.message}</p>`;
+        console.error('Error al cargar la publicación:', err);
+      });
 });
+
 
 // 1) Define your slides in one place:
 const slides = [

@@ -3,6 +3,12 @@ title: "Ejemplo de Publicación"
 date: 2025-06-01T12:00
 image: "/images/uploads/ejemplo.jpg"
 ---
-# Título en Markdown
+# ¡Hola desde Markdown!
 
-Este es un ejemplo de publicación en formato Markdown. ¡Hola Mundo! Aquí puedes escribir **contenido** con _Markdown_ que se convertirá a HTML en la página principal.
+Este es un ejemplo de publicación en **Markdown**. Cuando visites la página principal, este contenido se convertirá automáticamente a HTML y se mostrará allí.
+
+- Puedes usar listas
+- **Negritas** y _cursivas_
+- Cargar imágenes
+
+¡Disfruta creando tu primer post!
