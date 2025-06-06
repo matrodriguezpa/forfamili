@@ -1,7 +1,7 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function() {
   const postsContainer = document.getElementById('posts-container');
-  fetch('https://raw.githubusercontent.com/matrodriguezpa/forfamili/content/posts/ejemplo.md')
+  fetch('https://raw.githubusercontent.com/matrodriguezpa/forfamili/main/content/posts/ejemplo.md')
       .then(response => response.text())
       .then(text => {
         // Convertir Markdown a HTML y añadir al contenedor
