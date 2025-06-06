@@ -1,4 +1,15 @@
 // script.js
+document.addEventListener("DOMContentLoaded", function() {
+  const postsContainer = document.getElementById('posts-container');
+  fetch('https://raw.githubusercontent.com/matrodriguezpa/forfamili/content/posts/ejemplo.md')
+      .then(response => response.text())
+      .then(text => {
+        // Convertir Markdown a HTML y añadir al contenedor
+        const html = marked.parse(text);
+        postsContainer.innerHTML = html;
+      })
+      .catch(err => console.error('Error al cargar la publicación:', err));
+});
 
 // 1) Define your slides in one place:
 const slides = [
