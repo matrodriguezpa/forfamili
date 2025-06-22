@@ -16,6 +16,7 @@ async function loadPosts() {
                 day: 'numeric'
             });
 
+            /*
             // Construir contenido de preview (imagen + texto)
             let previewContent = '';
             if (post.previewImage) {
@@ -32,6 +33,7 @@ async function loadPosts() {
                     </div>
                 `;
             }
+            */
 
             // Crear el artículo
             const article = document.createElement('article');
@@ -52,7 +54,6 @@ async function loadPosts() {
     }
 }
 
-
 // Carga post individual
 async function loadPost() {
     try {
@@ -65,11 +66,24 @@ async function loadPost() {
         if (!res.ok) throw new Error('Post not found');
 
         const post = await res.json();
+
+        // Formatear fecha
+        const dateObj = new Date(post.date);
+        const formattedDate = dateObj.toLocaleDateString('es-CO', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Actualizar contenido del post
         document.getElementById('post-title').textContent = post.title;
+        document.getElementById('post-meta').innerHTML = `
+            <time datetime="${post.date}">${formattedDate}</time>
+        `;
         document.getElementById('post-content').innerHTML = post.body;
 
         // Actualizar el título de la página
-        document.title = `${post.title} - Mi Blog`;
+        document.title = `${post.title} - Forfamili`;
 
     } catch (error) {
         console.error('Error loading post:', error);
