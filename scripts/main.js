@@ -8,21 +8,50 @@ async function loadPosts() {
         const container = document.getElementById('posts');
 
         posts.forEach(post => {
+            // Formatear fecha en español (colombia)
+            const dateObj = new Date(post.date);
+            const formattedDate = dateObj.toLocaleDateString('es-CO', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Construir contenido de preview (imagen + texto)
+            let previewContent = '';
+            if (post.previewImage) {
+                previewContent += `
+                    <div class="post-preview-image">
+                        <img src="${post.previewImage}" alt="Vista previa de ${post.title}" />
+                    </div>
+                `;
+            }
+            if (post.previewText) {
+                previewContent += `
+                    <div class="post-preview-text">
+                        <p>${post.previewText}</p>
+                    </div>
+                `;
+            }
+
+            // Crear el artículo
             const article = document.createElement('article');
             article.innerHTML = `
-                <h2><a href="/post.html?slug=${post.slug}">${post.title}</a></h2>
-                <time>${post.date}</time>
-                <p>${post.preview}</p>
+                <h2>
+                    <a href="/post.html?slug=${post.slug}">${post.title}</a>
+                </h2>
+                <time datetime="${post.date}">${formattedDate}</time>
+                ${previewContent}
             `;
+
             container.appendChild(article);
         });
     } catch (error) {
         console.error('Error loading posts:', error);
         document.getElementById('posts').innerHTML =
             '<p class="error-message">Error cargando publicaciones. Por favor intenta recargar.</p>';
-
     }
 }
+
 
 // Carga post individual
 async function loadPost() {
