@@ -2,10 +2,11 @@
   "name": "forfamili",
   "version": "1.0.0",
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node functions/build.js"
   },
   "dependencies": {
-    "markdown-it": "^13.0.1"
+    "markdown-it": "^13.0.1",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "live-server": "^1.2.2"
