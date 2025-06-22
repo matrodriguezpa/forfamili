@@ -1,0 +1,5 @@
+{
+  "title": "Mi primera publicación",
+  "date": "2025-06-16",
+  "body": "<p>¡Bienvenidos a mi blog en Netlify con login! Este es un ejemplo de contenido.</p>\n<pre><code>\n---\n\n# Generar posts.json y JSON de cada post\nPuedes usar un script de construcción (por ejemplo en Node.js) para convertir tus markdown en JSON:\n</code></pre>\n"
+}

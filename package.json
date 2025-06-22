@@ -1,5 +1,5 @@
 {
-  "name": "mi-netlify-blog",
+  "name": "forfamili",
   "version": "1.0.0",
   "scripts": {
     "build": "node scripts/build.js"
