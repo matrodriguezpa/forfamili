@@ -1,31 +1,42 @@
-// scripts/identity-handler.js
-document.addEventListener('DOMContentLoaded', () => {
-    const handleTokenConfirmation = async () => {
-        if (!window.location.hash) return;
+// Verificar si estamos en la página principal
+if (window.location.pathname === "/") {
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log("Identity handler loaded");
 
-        const hashParams = new URLSearchParams(window.location.hash.substring(1));
-        const token = hashParams.get('confirmation_token');
+        // Manejar token de confirmación
+        if (window.location.hash.includes('confirmation_token')) {
+            console.log("Token found in URL");
+            confirmToken();
+        }
+    });
 
-        if (!token) return;
-
+    async function confirmToken() {
         try {
-            const response = await fetch(`/.netlify/functions/confirm?token=${token}`, {
+            // Extraer token del hash
+            const token = new URLSearchParams(window.location.hash.substring(1)).get('confirmation_token');
+            if (!token) throw new Error("Token not found");
+
+            console.log("Sending token to server:", token);
+
+            // Llamar a la función de Netlify
+            const response = await fetch(`/.netlify/functions/confirm?token=${encodeURIComponent(token)}`, {
                 method: 'POST'
             });
 
-            if (response.ok) {
-                // Limpiar URL después de la confirmación
-                window.history.replaceState({}, document.title, window.location.pathname);
-                alert('¡Correo confirmado correctamente!');
-                window.location.href = '/admin/';
-            } else {
-                throw new Error('Error en la confirmación');
-            }
-        } catch (error) {
-            console.error('Error al confirmar:', error);
-            alert('Error al confirmar el correo. Por favor intenta nuevamente.');
-        }
-    };
+            console.log("Response status:", response.status);
 
-    handleTokenConfirmation();
-});
+            if (!response.ok) {
+                const errorData = await response.text();
+                throw new Error(`Server error: ${response.status} - ${errorData}`);
+            }
+
+            // Limpiar URL y redirigir
+            window.history.replaceState({}, document.title, "/");
+            alert('¡Cuenta verificada correctamente! Redirigiendo al panel de administración...');
+            window.location.href = '/admin/';
+        } catch (error) {
+            console.error("Confirmation failed:", error);
+            alert(`Error de confirmación: ${error.message}. Por favor contacta al soporte.`);
+        }
+    }
+}
