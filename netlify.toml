@@ -1,0 +1,45 @@
+[build]
+  command = "npm run build"
+  publish = "."
+  functions = "functions"
+
+[identity]
+  # Identity y Git Gateway desde Netlify dashboard
+  register = true
+
+# Redirigir slugs dinámicos a post.html para client-side routing
+# ... existing build settings ...
+
+# Redirecciones mejoradas
+[[redirects]]
+  from = "/post/:slug"
+  to = "/post.html?slug=:slug"
+  status = 200
+
+[[redirects]]
+  from = "/:slug"
+  to = "/post.html?slug=:slug"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ... existing dev settings ...
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Asegúrate de que esta redirección esté al FINAL
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

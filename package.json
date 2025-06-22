@@ -1,0 +1,13 @@
+{
+  "name": "mi-netlify-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "dependencies": {
+    "markdown-it": "^13.0.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
