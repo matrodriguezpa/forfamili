@@ -43,9 +43,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-[[redirects]]
-from = "/.netlify/functions/confirm"
-to = "/functions/confirm.js"
-status = 200
-force = true
