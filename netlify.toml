@@ -49,9 +49,3 @@ from = "/.netlify/functions/confirm"
 to = "/functions/confirm.js"
 status = 200
 force = true
-
-# Y asegurar que esta redirección exista
-[[redirects]]
-  from = "/.netlify/functions/*"
-  to = "/functions/:splat"
-  status = 200

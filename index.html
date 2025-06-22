@@ -50,6 +50,7 @@
     <script src="scripts/main.js"></script>
 </main>
 
+
 <footer class="site-footer">
     <section id="contacto">
         <h2>Contacto</h2>
@@ -63,6 +64,14 @@
     </section>
 </footer>
 
+<!-- Carga dinámica del widget -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+    // Inicializa el widget una vez cargado el DOM
+    document.addEventListener('DOMContentLoaded', () => {
+        netlifyIdentity.init();
+    });
+</script>
 
 <script src="scripts/script.js"></script>
 </body>
