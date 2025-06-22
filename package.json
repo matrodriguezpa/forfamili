@@ -2,7 +2,7 @@
   "name": "forfamili",
   "version": "1.0.0",
   "scripts": {
-    "build": "node functions/build.js"
+    "build": "node scripts/build.js"
   },
   "dependencies": {
     "markdown-it": "^13.0.1",
