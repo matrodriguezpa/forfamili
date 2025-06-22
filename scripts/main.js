@@ -16,6 +16,24 @@ async function loadPosts() {
                 day: 'numeric'
             });
 
+
+            // Construir contenido de preview (imagen + texto)
+            let previewContent = '';
+            if (post.previewImage) {
+                previewContent += `
+                    <div class="post-preview-image">
+                        <img src="${post.previewImage}" alt="Vista previa de ${post.title}" />
+                    </div>
+                `;
+            }
+            if (post.previewText) {
+                previewContent += `
+                    <div class="post-preview-text">
+                        <p>${post.previewText}</p>
+                    </div>
+                `;
+            }
+
             // Crear el artículo
             const article = document.createElement('article');
             article.innerHTML = `
@@ -23,6 +41,7 @@ async function loadPosts() {
                     <a href="/post.html?slug=${post.slug}">${post.title}</a>
                 </h2>
                 <time datetime="${post.date}">${formattedDate}</time>
+                ${previewContent}
             `;
 
             container.appendChild(article);
@@ -59,11 +78,12 @@ async function loadPost() {
         document.getElementById('post-title').textContent = post.title;
         document.getElementById('post-meta').innerHTML = `
             <time datetime="${post.date}">${formattedDate}</time>
+            <span class="post-author">por ${post.author}</span>
         `;
         document.getElementById('post-content').innerHTML = post.body;
 
         // Actualizar el título de la página
-        document.title = `${post.title} - Forfamili`;
+        document.title = `${post.title} - Mi Blog`;
 
     } catch (error) {
         console.error('Error loading post:', error);

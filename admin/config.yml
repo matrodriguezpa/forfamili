@@ -24,5 +24,8 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Fecha", name: "date", widget: "datetime" }
-      - { label: "Cuerpo", name: "body", widget: "markdown" }
+      - { label: "Fecha",   name: "date",   widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Autor",   name: "author", widget: "string" }
+      - { label: "Etiquetas", name: "tags", widget: "list", default: [] }
+      - { label: "Imagen de portada", name: "cover", widget: "image", allow_multiple: false }
+      - { label: "Cuerpo",  name: "body",   widget: "markdown" }
