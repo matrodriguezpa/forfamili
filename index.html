@@ -6,7 +6,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ForFamili - Fortaleciendo familias</title>
-    <link rel="stylesheet" href="/styles/style.css"/>
     <link rel="stylesheet" href="/styles/main.css"/>
     <link rel="icon" href="images/logo/icono.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -15,19 +14,13 @@
 
 <body>
 <header class="site-header">
-    <a href="http://www.forfamili.org/" class="logo">
+    <a class="logo">
         <img src="images/logo/logo.png" alt="Logo ForFamili"/>
         <div class="titulo">
             <h1>FORFAMILI</h1>
             <p>Fortaleciendo familias con amor.</p>
         </div>
     </a>
-    <nav class="main-nav">
-        <a href="#inicio">Inicio</a>
-        <a href="#mision">Misión</a>
-        <a href="#vision">Visión</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
     <div class="social">
         <a href="https://facebook.com/forfamili" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
         <a href="mailto:forfamili2021@hotmail.com"><i class="fas fa-envelope"></i></a>
@@ -38,15 +31,7 @@
 </header>
 
 <main>
-    <section id="inicio" class="main-block">
-        <!--<div class="slideshow-container">
-            <a class="prev">&#10094;</a>
-            <a class="next">&#10095;</a>
-        </div>-->
-
-        <div class="dots-container" style="text-align:center"></div>
-    </section>
-
+    <section id="inicio" class="main-block"></section>
     <main id="posts"></main>
     <script src="scripts/main.js"></script>
 </main>
@@ -66,15 +51,12 @@
 </footer>
 
 <!-- Carga dinámica del widget -->
+<script src="scripts/script.js"></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
-    // Inicializa el widget una vez cargado el DOM
-    document.addEventListener('DOMContentLoaded', () => {
-        netlifyIdentity.init();
-    });
+    document.addEventListener('DOMContentLoaded', () => {netlifyIdentity.init();});
 </script>
 
-<script src="scripts/script.js"></script>
 </body>
 
 </html>
